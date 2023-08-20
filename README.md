@@ -19,34 +19,67 @@ Use imwrite(filename, image) to write the image.
 ### Step5:
 End the program and close the output image windows.
 ## Program:
-### Developed By:
-### Register Number: 
+### Developed By: Jeeva Abishake
+### Register Number: 212221240018
 i) #To Read,display the image
-```
+```python
+import cv2
+img = cv2.imread('spy.jpg', -1)
+resized_img = cv2.resize(img1, (364, 205), interpolation=cv2.INTER_LINEAR)
+cv2.imshow('212221240018_JeevaAbi', resized_img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
   
 
 ```
 ii) #To write the image
-```
+```python
+import cv2
+img=cv2.imread('spy.jpg',-1)
+cv2.imwrite('writed_image.png',img)
 
 
 
 ```
 iii) #Find the shape of the Image
-```python3
+```python
+import cv2
+img=cv2.imread('spy.jpg',-1)
+print(img.shape)
 
 
 
 ```
 iv) #To access rows and columns
 
-```python3
+```python
+import cv2
+img = cv2.imread('spy.jpg', -1)
+resized_img = cv2.resize(img, None, fx=0.5, fy=0.5, interpolation=cv2.INTER_LINEAR)
+for i in range(100,150):
+    for j in range(100,120):
+        resized_img[i][j]=[255,250,255] #blue green red
+cv2.imshow('212221240018_JeevaAbi',resized_img);
+cv2.waitKey(0)
+cv2.destroyAllWindows()
 
 
 
 ```
 v) #To cut and paste portion of image
-```python3
+```python
+import cv2
+img = cv2.imread('spy.jpg', -1)
+resized_img = cv2.resize(img, None, fx=0.1, fy=0.1)
+copied_portion = resized_img[70:150, 60:220] 
+destination_area = resized_img[60:140, 25:185] 
+if destination_area.shape == copied_portion.shape:
+    resized_img[60:140, 25:185] = copied_portion
+else:
+    print("Shapes of source and destination areas do not match!")
+cv2.imshow('212221240018_JeevaAbi', resized_img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
 
 
 
@@ -56,26 +89,25 @@ v) #To cut and paste portion of image
 
 ### i) Read and display the image
 
-<br>
-<br>
+
+![output](out1.png)
+
 
 ### ii)Write the image
 
-<br>
-<br>
+![output](write.png)
+
 
 ### iii)Shape of the Image
 
-<br>
-<br>
+![out](shape.png)
 
 ### iv)Access rows and columns
-<br>
-<br>
+
+![out](rowndclm.png)
 
 ### v)Cut and paste portion of image
-<br>
-<br>
+![ourt](final.png)
 
 ## Result:
 Thus the images are read, displayed, and written successfully using the python program.
